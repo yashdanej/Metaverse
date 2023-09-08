@@ -3,6 +3,7 @@ const { posts } = require('../model/post');
 var fs = require('fs');
 const jwt = require('jsonwebtoken');
 const path = require('path');
+const cloudinary = require('../utils/cloudinary');
 
 // for posting
 exports.post = async (req, res) => {
@@ -17,9 +18,17 @@ exports.post = async (req, res) => {
     if (!peopleId) {
       return res.status(404).json({ error: 'User not found' });
     }
+    console.log('req.post:',req.file.path)
+
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      folder: "posts"
+    });
     let postObj = {
       people: peopleId,
-      post: req.file.path,
+      post: {
+        public_id: result.public_id,
+        url: result.secure_url
+      },
       caption: req.body.caption,
       location: req.body.location
     };

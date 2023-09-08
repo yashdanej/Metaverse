@@ -22,7 +22,14 @@ const peopleSchema = new Schema({
         default: ''
     },
     profilePic: {
-        type: String
+        public_id: {
+            type: String,
+            required: true
+        },
+        url: {
+            type: String,
+            required: true
+        }
     },
     follower: {
         type: [mongoose.Schema.ObjectId],

@@ -2,6 +2,7 @@ const { peoples } = require("../model/peoples");
 var fs = require('fs');
 const path = require('path');
 const jwt = require('jsonwebtoken');
+const cloudinary = require('../utils/cloudinary');
 
 exports.People = async (req, res) => {
   try {
@@ -77,6 +78,9 @@ exports.UpdatePeopleProfile = async (req, res) => {
     if (!id) return res.status(404).send('The profile with the given ID was not found.');
     const getPeople = await peoples.findById(id);
     if (!getPeople) return res.status(404).send('The profile with the given ID was not found.');
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      folder: "posts"
+    });
     let bio;
     let profilePic;
     let location;
@@ -84,7 +88,10 @@ exports.UpdatePeopleProfile = async (req, res) => {
       bio = req.body.bio;
     }
     if(req.file){
-      profilePic = req.file.path
+      profilePic = {
+        public_id: result.public_id,
+        url: result.secure_url
+      }
     }
     if(req.body.location){
       location = req.body.location;

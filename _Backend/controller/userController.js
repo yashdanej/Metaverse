@@ -20,7 +20,7 @@ exports.SignUp = async (req, res) => {
       await peoples.create({
         user: result,
         username: req.body.username,
-        profilePic: 'uploads\\profile.png'
+        profilePic: {public_id: '1', url: 'https://res.cloudinary.com/dbb3q0p82/image/upload/v1694156664/profile_jsgyay.png'}
       })
       const token = jwt.sign({email: result.email, id: result._id}, process.env.SECRET_KEY)
       res.status(201).json({'user': result, 'token': token});
