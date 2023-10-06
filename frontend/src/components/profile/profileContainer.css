@@ -1,0 +1,60 @@
+.backColor{
+    color: var(--meta-color);
+}
+
+.profileusername{
+    font-size: 2rem;
+}
+
+.btnFollow{
+    background-color: var(--meta-sub-color);
+    color: var(--meta-sub-background);
+    border-radius: 25px;
+}
+
+.btnFollow:hover{
+    background-color: var(--meta-color);
+    color: var(--meta-sub-background);
+}
+
+.btnProfileEdit{
+    padding: 5px 25px;
+    background-color: #e2e2e0;
+    color: var(--meta-color);
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+
+.borderTop{
+    border-top: 1px solid black;
+}
+
+.borderTopColor{
+    border-top: 1px solid #ffffffb2;
+}
+
+.profileCt .colorBottomBorder{
+    color: #f5f5f5bb !important;
+}
+.imgSet{
+    min-height: 200px;
+}
+@media only screen and (max-width: 1199px) {
+    .profileCt .col-lg-4{
+        flex: 50% !important;
+    }
+    
+}
+@media only screen and (max-width: 575px) {
+    .profileCt .col-lg-4{
+        flex: 100% !important;
+    }
+    .profileCt img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+    }
+}
