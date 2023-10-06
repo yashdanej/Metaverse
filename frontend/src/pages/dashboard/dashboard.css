@@ -1,0 +1,112 @@
+.dashboard .sideContainer{
+    width: 40vw;
+    height: 100%;
+    max-height: 75vh;
+    background-color: var(--meta-sub-background);
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; */
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px !important;
+    overflow-y: auto;
+    overflow-x: hidden !important;
+    scrollbar-width: thin;
+    border-radius: 20px;
+}
+
+.dashboard .sideC{
+  background-color: #191819;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.dashboard .sideSecondC{
+  background-color: #0c0c0d !important;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+::-webkit-scrollbar {
+    width: 0px; /* Change the width of the scrollbar */
+  }
+  /* Change the width and height of the scrollbar handle (thumb) */
+  ::-webkit-scrollbar-thumb {
+    background-color: #888; /* Change the color of the scrollbar handle */
+    border-radius: 5px; /* Round the corners of the scrollbar handle */
+  }
+  
+  /* Optionally, change the color of the scrollbar track */
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+.centerContainer{
+  margin-top: -50px;
+    width: 55vw;
+    height: 90vh;
+    background-color: var(--meta-sub-background);
+    margin-left: 30px;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; */
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    overflow: auto;
+}
+.opacity{
+  opacity: 0;
+}
+.centerComp{
+  width: 75vw;
+  height: 100%;
+}
+
+.dashboard .itemsJustify{
+    justify-content: center;
+}
+
+.rightSide{
+    margin-left: 30px;
+}
+.marginBottom{
+  margin-bottom: -50px !important;
+}
+
+@media only screen and (max-width: 1199px) {
+    .dashboard .sideContainer{
+      width: 45vw !important;
+  }
+  .centerContainer{
+      margin-left: 10px !important;
+  }
+  .rightSide{
+    margin-left: 10px !important;
+  }
+  .paddingSmall{
+    padding: 1rem !important;
+  }
+  .fontSmall{
+    font-size: 9px !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .dashboard .itemsJustify {
+    flex-wrap: wrap;
+  }
+  .dashboard .sideContainer{
+    flex-grow: 0.40;
+  }
+  .rightSide{
+    margin-bottom: 3rem !important;
+    margin-left: 0px !important;
+  }
+  .centerContainer{
+    flex-grow: 0.40;
+    margin: 3rem auto !important;
+    height: 120vh;
+    border-radius: 20px;
+  }
+}
+@media only screen and (max-width: 899px) {
+  .centerComp{
+    width: auto;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .dashboard .sideContainer{
+    flex-grow: 1;
+  }
+  .centerContainer{
+    flex-grow: 1;
+  }
+}
